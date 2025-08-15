@@ -1,0 +1,400 @@
+:root {
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --dark: #000000;
+    --bg-color: var(--white);
+    --text-color: var(--dark);
+    --card-bg: var(--light-gray);
+    --accent-color: #504f4f; /* Azul escolar */
+}
+
+/* ===== Reset básico ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+    background-color: var(--accent-color);
+    color: var(--white);
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center;
+    gap: 1.5rem; /* Espaçamento entre brasão, título e botões */
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    transition: background-color 0.4s ease;
+    text-align: center;
+}
+
+header .brasao-domingas img {
+    max-height: 60px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    flex: 1;
+}
+
+/* Botões no cabeçalho (pesquisa e microfone) */
+.header-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header-buttons button {
+    background-color: var(--white);
+    color: var(--accent-color);
+    border: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.header-buttons button:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+/* ===== Barra de navegação ===== */
+nav {
+    background-color: #e3e3e3;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem; /* Espaço entre imagem e botão de tema */
+    transition: background-color 0.4s ease;
+}
+
+nav img {
+    max-height: 50px;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-buttons button {
+    background-color: gray;
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-buttons button:hover {
+    background-color: #565858;
+    transform: scale(1.05);
+}
+
+/* ===== Conteúdo principal ===== */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+/* Seção integrada de destaques */
+.destaques-escola {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* Carrossel */
+.carrossel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.carrossel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.carrossel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.carrossel-item p {
+    color: var(--text-color);
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Botões do carrossel */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+.carrossel-btn.prev {
+    left: 10px;
+}
+
+.carrossel-btn.next {
+    right: 10px;
+}
+
+/* Cards de eventos com imagens */
+.cards-eventos-imagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-evento-img {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-evento-img img {
+    width: 100%;
+    height: auto;
+}
+
+.card-evento-img h3 {
+    margin: 0.5rem 0;
+    color: var(--accent-color);
+}
+
+.card-evento-img {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: 2px solid #ccc; /* borda suave */
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-evento-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    border-color: var(--accent-color); /* borda destaca no hover */
+}
+/* Carrossel */
+.carrossel-item img {
+    width: 100%;
+    height: 300px; /* altura fixa */
+    object-fit: cover; /* mantém proporção, cortando o excesso */
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+/* Cards de eventos com imagens */
+.card-evento-img img {
+    width: 100%;
+    height: 200px; /* altura fixa para todos os cards */
+    object-fit: cover; /* mantém proporção e preenche a área */
+}
+
+.carrossel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    scroll-behavior: smooth; /* smooth scroll em touch devices */
+}
+
+
+/* ===== Rodapé ===== */
+footer {
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* ===== Tema escuro ===== */
+body.dark-mode {
+    --bg-color: #2b2b2b;
+    --text-color: #f5f5f5;
+    --card-bg: #3a3a3a;
+    --accent-color: #4ba3c7;
+}
+
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode footer {
+    background-color: var(--accent-color);
+}
+
+body.dark-mode .header-buttons button {
+    background-color: #fff;
+    color: #000;
+}
+
+body.dark-mode .header-buttons button:hover {
+    background-color: #ddd;
+}
+
+body.dark-mode .nav-buttons button {
+    background-color: #fff;
+    color: #000;
+}
+
+body.dark-mode .nav-buttons button:hover {
+    background-color: #ddd;
+}
+/* ===== Footer ===== */
+footer {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto 1rem auto;
+}
+
+.footer-container h3 {
+    margin-bottom: 0.5rem;
+}
+
+.footer-container p,
+.footer-container a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+/* ===== Ajustes mobile e tablet ===== */
+@media (max-width: 1024px) {
+    header, nav, footer {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-buttons button,
+    .nav-buttons button {
+        padding: 0.6rem 0.8rem;
+        font-size: 1rem;
+    }
+
+    .carrossel-item img {
+        height: 250px; /* ajusta altura da imagem do carrossel em tablets */
+    }
+
+    .card-evento-img img {
+        height: 180px; /* ajusta altura dos cards */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+
+    .cards-eventos-imagens {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .carrossel-item img {
+        height: 200px;
+    }
+
+    .card-evento-img img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .header-buttons button,
+    .nav-buttons button {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .carrossel-item img {
+        height: 150px;
+    }
+
+    .card-evento-img img {
+        height: 120px;
+    }
+}
